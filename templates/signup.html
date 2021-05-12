@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body style="background-color: rgb(192, 56, 32);">
+    
+    <div class="signup" style="height: 400px; width: 600px; background-color: rgb(145, 170, 153); border-radius: 5px; margin: auto; margin-top: 10%;">
+        <h1 style="text-align: center; padding-top: 15px;">SignUp</h1>
+        <div class="form-group" id="form" style="margin-left: 25%; margin-top: 50px;">
+            <form method="POST" action="">
+                {% csrf_token %}
+                Username:&nbsp
+                {{form.username}} <br><br>
+                E-mail: &nbsp&nbsp;&nbsp&nbsp&nbsp&nbsp
+                {{form.email}}<br><br>
+                Password: &nbsp
+                {{form.password1}}<br><br>
+                Password: &nbsp
+                {{form.password2}}<br><br>
+                <button type="submit" style="margin-left: 100px;">Upload</button>
+                <a href="/">Login here</a>
+            </form>
+        </div>
+    </div>
+
+    <style>
+        @media screen and (max-width: 800px) {
+            .signup, #form{
+                width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+            }
+        }
+    </style>
+</body>
+</html>
