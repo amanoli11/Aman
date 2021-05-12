@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <title>LOGIN</title>
+</head>
+<body>
+
+  
+      <!--<form method="POST" action="/">
+        {% csrf_token %}
+            <label for="username">Email:</label>
+            <input type="text" name="username" class="form-control" placeholder="username"><br>
+            
+            <label for="password">password</label>
+            <input type="password" name="password" class="form-control" placeholder="password"><br>
+            <button type="submit">Upload</button>
+            
+      </form>
+
+      <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                    <form method="POST", action="/" class="box">
+                      {% csrf_token %}
+                        <h1>Login</h1>
+                        <p class="text-muted"> Please enter your login and password!</p>
+                        
+                        <input type="text" name="username" placeholder="Username">
+                        
+                        <input type="password" name="password" placeholder="Password">
+                        
+                        <p style="color: white">don't have an account???<a class="forgot text-muted" href="/signup"> Signup</a></p>
+                        
+                        <input type="submit" name="" value="Login" href="#">
+                        
+                    </form>
+                
+            </div>
+        </div>
+    </div>-->
+
+
+<!-- This snippet uses Font Awesome 5 Free as a dependency. You can download it at fontawesome.io! -->
+<div class="registration-form">
+  <form method="POST", action="/" class="box">
+    {% csrf_token %}
+      <div class="form-icon">
+          <span><i class="icon icon-user"></i></span>
+      </div>
+      <div class="form-group">
+          <input type="text" class="form-control item" name="username" id="username" placeholder="Username">
+      </div>
+      <div class="form-group">
+          <input type="password" class="form-control item" name="password" id="password" placeholder="Password">
+      </div>
+      <div class="form-group">
+          <input type="submit" class="btn btn-block create-account"></button>
+          <p style="color: white; margin-top: 15px; margin-left: 20%;">don't have an account??? <a href="/signup">SignUp</a></p>
+      </div>
+  </form>
+</div>
+  </body>
+</html>

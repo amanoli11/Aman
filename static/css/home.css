@@ -1,0 +1,135 @@
+.globe{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: rgb(70, 169, 255);
+}
+
+.pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+    height: 250px;
+    background: #fff;
+    background: url('/static/images/globe.png');
+    background-size: cover;
+    border-radius: 50%;
+    animation: animateEarth 30s linear infinite;
+    box-shadow: inset 0 0 40px rgb(0, 0, 0);
+}
+
+@keyframes animateEarth {
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 1200px 0;
+    }
+}
+
+.title {
+    color: white;
+    font-weight: bolder;
+    font-size: 35px;
+    font-family: 'Courier New', monospace;
+    padding: 20px;
+    text-align: center;
+}
+
+.arrow {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 50px;
+    margin-left: 50%;
+}
+
+.arrow span {
+    display: block;
+    width: 25px;
+    height: 25px;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    border-right: 1px solid rgb(0, 0, 0);
+    transform: rotate(45deg);
+    margin: -10px;
+    animation: animate 2s infinite;
+}
+
+@keyframes animate {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+#navnav {
+    overflow: hidden;
+    background-color: #333;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    z-index: 9999;
+}
+
+.body {
+    background-color: rgb(62, 160, 135);
+    height: 635px;
+}
+
+.display {
+    text-align: center;
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: auto;
+}
+
+.result {
+    margin: auto;
+    color: white;
+    text-align: center;
+    padding-top: 20px;
+    width: fit-content;
+}
+
+#copyright {
+    margin: auto;
+    margin-top: 10px;
+    font-size: 15px;
+}
+
+.browser {
+    background-color:rgba(216, 117, 51, 0.61);
+    border-radius: 10px;
+    margin: auto;
+    width: fit-content;
+    border: 3px solid rgb(27, 87, 45);
+    box-shadow: 0 5px 8px 0 rgb(110, 12, 223), 0 6px 30px 0 rgba(0, 0, 0, 0.19);
+    padding: 20px;   
+}
+
+#btnSub {
+    border-radius: 5px;
+}
+
+.About {
+    background-color: rgb(79, 59, 83);
+    height: 635px;
+}
+
+#paragraph {
+    text-align: center;
+    margin-top: 120px;
+    font-size: 20px;
+    color: white;
+    font-weight:500;
+    font-family: cursive;
+}

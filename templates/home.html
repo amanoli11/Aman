@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" integrity="sha512-OdEXQYCOldjqUEsuMKsZRj93Ht23QRlhIb8E/X0sbwZhme8eUw6g8q7AdxGJKakcBbv7+/PX0Gc2btf7Ru8cZA==" crossorigin="anonymous" />
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark" id="navnav">
+        <a class="navbar-brand" href="#" style="color: darkgoldenrod; font-weight: bold;">The Flag Project</a>
+        
+        <a class="navbar-brand" href="#1">Home</a>
+        <a class="navbar-brand" href="#2">Prediction</a>
+        <a class="navbar-brand" href="#3">About</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href={% url 'logout' %}>Logout</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link">User - {{user.username}}</a>
+                </li>
+
+            </ul>
+        </div>
+      </nav>
+
+    <div id="1">
+        <div class="globe">
+
+            <h1 class="title">Flag Recognition System</h1>
+            <hr class="btn-important" style="height: 2px;">
+            
+            <div class="pulse">
+                <!--Here we animate the globe through CSS-->
+            </div>
+            
+            <div class="arrow"><!--This is used for making the arrow symbol-->
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div id="2">
+        <div class="body">
+            <div class="container-fluid" id="predict">
+                <h1 class="font-weight-bold text-center" style="padding-top: 20px; color: white; font-family: 'Brush Script MT', cursive; font-size: 45px;" id="text1">Predict Flag Images</h1>
+                <hr class="bg-warning mb-4 mt-8 d-incline-block mx-auto" style="height: 2px; box-shadow: 0 4px 8px 0 rgb(181, 199, 21)"><br><br>
+                <form method="post" enctype="multipart/form-data" id="form">
+                    {% csrf_token %}
+                    
+                    <div class="browser">
+                        <input type="file" name="myfile" id="file" accept="image/*">
+                        <button type="submit" id="btnSub">Predict Now</button>
+                    </div><br>
+            
+                <div class="result">
+                    {% if result == 0 %}
+                    <h2>The Image Belongs To Flag Of Afganistan</h2>
+                    {% endif %}
+                    {% if result == 1 %}
+                    <h2>The Image Belongs To Flag Of America</h2>
+                    {% endif %}
+                    {% if result == 2 %}
+                    <h2>The Image Belongs To Flag Of Argentina</h2>
+                    {% endif %}
+                    {% if result == 3 %}
+                    <h2>The Image Belongs To Flag Of Bangladesh</h2>
+                    {% endif %}
+                    {% if result == 4 %}
+                    <h2>The Image Belongs To Flag Of Bhutan</h2>
+                    {% endif %}
+                    {% if result == 5 %}
+                    <h2>The Image Belongs To Flag Of India</h2>
+                    {% endif %}
+                    {% if result == 6 %}
+                    <h2>The Image Belongs To Flag Of Maldives</h2>
+                    {% endif %}
+                    {% if result == 7 %}
+                    <h2>The Image Belongs To Flag Of Nepal</h2>
+                    {% endif %}
+                    {% if result == 8 %}
+                    <h2>The Image Belongs To Flag Of Pakistan</h2>
+                    {% endif %}
+                    {% if result == 9 %}
+                    <h2>The Image Belongs To Flag Of Srilanka</h2>
+                    {% endif %}
+                </div>
+            
+                <div class="display">
+                    {% if image_name %}
+                    <img src="/media/{{image_name}}" alt="film" class="display" id="image">
+                    {% endif %}
+                </div>
+            
+                </div>
+            
+        </div>
+    </div>
+
+    <div id="3">
+        <div class="About">
+            <h1 style="font-weight: bold; text-align: center; color: white; font-variant: small-caps; font-size: 40px; padding-top: 20px;"><u> About </u></h1>
+            <div id="paragraph">
+                <p>This is one of the image classification project.</p>
+                <p>This project have implemented image classification from the very root.</p>
+                <p>The Datasets have been made manually collecting every possible images of flags of different nations from the internet.</p>
+                <p>This system is a very useful for educational propose for learning image classification.</p>
+                <p>This system has been inspired by the work of <a href="https://medium.com/ymedialabs-innovation/implementing-object-detection-in-machine-learning-for-flag-cards-with-mxnet-6bc276bb0b14">this project.</a></p>
+                <p>There are many future works left with this project.</p>
+                
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="bg-dark">
+        <div class="container">
+            <div class="row py-4 d-flex align-items-center">
+                <div class="col-md-12 text-center">
+                    <a href="#"><i class="fab fa-facebook text-white mr-4 fa-3x"></i></a>
+                    <a href="#"><i class="fab fa-instagram text-white mr-4 fa-3x"></i></a>
+                    <a href="#"><i class="fab fa-twitter text-white mr-4 fa-3x"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in text-white mr-4 fa-3x"></i></a>
+                    <a href="#"><i class="fab fa-github text-white mr-4 fa-3x"></i></a>
+                </div>
+                <div class="copyright text-white" id="copyright">
+                    <p><i class="far fa-copyright text-white"></i> 2021 Copyright Aman Oli</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

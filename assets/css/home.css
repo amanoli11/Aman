@@ -1,0 +1,41 @@
+#title {
+    text-transform: inherit;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin-top: 5px;
+    color: whitesmoke;
+}
+
+#navnav {
+    border-radius: 3px;
+}
+
+#logout {
+    color: ivory;
+    font-size: 15px;
+}
+
+#userinfo {
+    margin-left: 70%;
+    margin-top: 3px;
+    font-size: 18px;
+    color: lavenderblush;
+}
+
+#link {
+    color: lavenderblush;
+}
+
+.container1 {
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    height: 50px;
+    font-size: 12px;
+    width: 500px;
+    background-color: grey;
+}
+
+#image {
+    margin-top: 55px;
+    margin-left: 40%;
+}
